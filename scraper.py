@@ -45,7 +45,7 @@ class Crawler:   # Generic web crawling object primarily using BeautifulSoup.
     def navigate(self, url):
         html = self.download_url(url)
         soupToNav = BeautifulSoup(html, 'html.parser')
-        print(soupToNav.find_all('a'))
+        print(soupToNav.getText())
             
         
 
