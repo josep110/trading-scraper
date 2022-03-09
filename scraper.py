@@ -49,6 +49,12 @@ class Crawler:   # Generic web crawling object primarily using BeautifulSoup.
             
         
 
+class Brain:
+    
+    def __ init__(self):
+        
+
+
 
 if __name__ == '__main__':
     Crawler(urls=['https://www.youtube.com/']).navigate('https://maddox.xmission.com')
