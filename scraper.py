@@ -15,7 +15,7 @@ class Crawler:   # Generic web crawling object primarily using BeautifulSoup.
         return requests.get(url).text
         
     def get_linked_urls(self, url, html):
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, 'html.parser') # uses standard Python html parser.
         for link in soup.find_all('a'):
             path = link.get('href')
             if path and path.startswith('/'):
