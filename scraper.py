@@ -1,11 +1,11 @@
-import logging
+import logging, time
 from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup 
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s',level=logging.INFO)
 
-class Crawler:   # Generic web crawling object primarily using BeautifulSoup.
+class Crawler:   # Generic web crawling object primarily using BeautifulSoup for site traversal.
 
     def __init__(self, urls=[]):
         self.visited = []
@@ -41,16 +41,16 @@ class Crawler:   # Generic web crawling object primarily using BeautifulSoup.
                 logging.exception(f'Failed to crawl: {url}')
             finally:
                 self.visited.append(url)
+
                 
+
     def navigate(self, url):
-        html = self.download_url(url)
-        soupToNav = BeautifulSoup(html, 'html.parser')
-        print(soupToNav.getText())
+        run()
             
         
 
 def go(url):
-    Crawler(urls=[]).navigate(url)
+    Crawler(urls=[url]).run()
 
 
  

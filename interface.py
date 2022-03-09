@@ -28,9 +28,18 @@ class TS_Interface(QWidget):
         self.button.clicked.connect(self.on_click)
         self.button.move(170,260)
 
+        self.button = QPushButton('Stop', self)
+        self.button.setToolTip('Stops Scraping')
+        self.button.clicked.connect(self.on_exit)
+        self.button.move(260,260)
+
         self.show()
 
     @pyqtSlot()
     def on_click(self):
-        url = self.urlBox.text()
-        scraper.go(url)
+        st = self.urlBox.text()
+        scraper.go(st)
+
+    @pyqtSlot()
+    def on_exit(self):
+        sys.exit()
